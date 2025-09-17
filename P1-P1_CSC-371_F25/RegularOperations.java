@@ -9,21 +9,10 @@ public class RegularOperations {
         List<String> files = Arrays.stream(dir.list((d, n) -> n.endsWith(".txt"))).sorted().collect(Collectors.toList());
 
         Scanner scanner = new Scanner(System.in);
-        int k = 0;
-        try {
-            System.out.print("Enter k value for A^k operation: ");
-            System.out.flush();
-            if (scanner.hasNextInt()) {
-                k = scanner.nextInt();
-            } else {
-                System.out.println("Invalid input. Using default k=3");
-                k = 3;
-            }
-        } catch (Exception e) {
-            System.out.println("Error reading input. Using default k=3");
-            k = 3;
-        }
+        System.out.print("Enter k value for A^k operation: ");
+        int k = scanner.nextInt();
 
+        
         for (String inputFile: files) {
             System.out.println("=== " + inputFile + " ===");
             List<String> languageA = new ArrayList<>();
@@ -60,10 +49,15 @@ public class RegularOperations {
             List<String> concatenation = performConcatenation(languageA, languageB);
             List<String> exponentiation = performExponentiation(languageA, k);
 
+            //Display
+            System.out.println("A = " + formatLanguage(languageA));
+            System.out.println("B = " + formatLanguage(languageB));
+            System.out.println();
 
             System.out.println("AUB = " + formatLanguage(union));
             System.out.println("A◦B = " + formatLanguage(concatenation));
             System.out.println("A^" + k + " = " + formatLanguage(exponentiation));
+            System.out.println();
             System.out.println();
         }
 
