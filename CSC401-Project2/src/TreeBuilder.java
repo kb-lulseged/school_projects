@@ -24,9 +24,30 @@ public class TreeBuilder {
             return null;
         }
 
+        // Split Arrays and build tree
+        int leftSize = rootIndex;
+        int[] leftInorder = Arrays.copyOfRange(inorder, 0, rootIndex);
+        int[] rightInorder = Arrays.copyOfRange(inorder, rootIndex + 1, inorder.length);
+        int[] leftPostorder = Arrays.copyOfRange(postorder, 0, leftSize);
+        int[] rightPostorder = Arrays.copyOfRange(postorder, leftSize, postorder.length - 1);
 
+        TreeNode root = new TreeNode(rootValue);
+        root.setLeft(buildTree(leftInorder, leftPostorder));
+        root.setRight(buildTree(rightInorder, rightPostorder));
+
+        return root;
     
-    
+    }
+
+    // Helper
+    private static boolean sameElements(int[] arr1, int[] arr2) {
+        Set<Integer> set1 = new HashSet<>();
+        Set<Integer> set2 = new HashSet<>();
+
+        for (int num : arr1) set1.add(num);
+        for (int num : arr2) set2.add(num);
+
+        return set1.equals(set2);
     }
 
 }
