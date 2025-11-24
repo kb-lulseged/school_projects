@@ -1,0 +1,4 @@
+S-aA|bB
+A-a|aS
+B-BC
+C-CB

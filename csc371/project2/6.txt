@@ -1,0 +1,5 @@
+S-AB|a
+A-aA|0
+B-bB|0
+C-cD
+D-dC
