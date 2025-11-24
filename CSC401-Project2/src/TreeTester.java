@@ -103,7 +103,7 @@ public class TreeTester {
         System.out.println("Postorder: " + Arrays.toString(postorder));
 
         long startTime = System.nanoTime();
-        TreeNode result = TreeBuilder.buildTree(inorder, postorder);
+        TreeNode result = BinaryTreeBuilder.buildBinaryTree(inorder, postorder);
         long endTime = System.nanoTime();
 
         double elapsedTime = (endTime - startTime) / 1_000_000.0;
