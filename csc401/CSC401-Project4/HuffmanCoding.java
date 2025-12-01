@@ -28,7 +28,7 @@ public class HuffmanCoding {
         PriorityQueue<HuffmanNode> pq = new PriorityQueue<>();
 
         // Creating leaf nodes 
-        for (Map.Entry<Character, Integer> entry: frequencies:entrySet()) {
+        for (Map.Entry<Character, Integer> entry : frequencies.entrySet()) {
             HuffmanNode node = new HuffmanNode(entry.getKey(), entry.getValue());
             pq.offer(node);
         }
@@ -41,7 +41,7 @@ public class HuffmanCoding {
         }
 
         // Build tree - Greedy style
-        while (pq.size() > 1)) {
+        while (pq.size() > 1) {
             HuffmanNode left = pq.poll();
             HuffmanNode right = pq.poll();
 
@@ -73,7 +73,7 @@ public class HuffmanCoding {
 
 
     public String encode(String text) {
-        if (text == null || text.isEmpty()) { return; }
+        if (text == null || text.isEmpty()) { return ""; }
 
         Map<Character, Integer> frequencies = calculateFrequencies(text);
         root = buildHuffmanTree(frequencies);
@@ -97,7 +97,7 @@ public class HuffmanCoding {
         }
 
         StringBuilder decoded = new StringBuilder();
-        HuffmanNode current = node;
+        HuffmanNode current = root;
 
         for (char bit : encodedText.toCharArray()) {
             if (bit == '0') 
@@ -213,7 +213,7 @@ public class HuffmanCoding {
 
 
         // Test Decoding
-        String decoded = huffman.decoded(encoded);
+        String decoded = huffman.decode(encoded);
         System.out.println("\n" + "=".repeat(60));
         System.out.println("DECODING VERIFICATION");
         System.out.println("=".repeat(60));

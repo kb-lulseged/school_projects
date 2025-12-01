@@ -68,46 +68,45 @@ public class HuffmanTest {
         System.out.println("TEST 3: 1000-WORD TEXT SAMPLE");
         System.out.println("=".repeat(70));
         
-        String text = """
-        The history of computer science began long before the modern discipline of computer science,
-        usually appearing in forms like mathematics or physics. Developments in previous centuries
-        alluded to the discipline that we now know as computer science. This progression, from
-        mechanical inventions and mathematical theories towards modern computer concepts and machines,
-        led to the development of a major academic field and the basis of a massive worldwide industry.
-        
-        The earliest known tool for use in computation was the abacus, developed in the period between
-        2700 and 2300 BCE in Sumer. The Sumerians' abacus consisted of a table of successive columns
-        which delimited the successive orders of magnitude of their sexagesimal number system. Its
-        original style of usage was by lines drawn in sand with pebbles. Abaci of a more modern design
-        are still used as calculation tools today.
-        
-        In 1837, Charles Babbage first described his Analytical Engine which is accepted as the first
-        design for a modern computer. The analytical engine had expandable memory, an arithmetic unit,
-        and logic processing capabilities able to interpret a programming language with loops and
-        conditional branching. Although never built, the design has been studied extensively and is
-        understood to be Turing complete. The analytical engine would have been a digital computer.
-        
-        Alan Turing is widely considered to be the father of theoretical computer science and artificial
-        intelligence. During World War II, Turing worked for the Government Code and Cypher School at
-        Bletchley Park, Britain's codebreaking centre that produced Ultra intelligence. For a time he
-        led Hut 8, the section that was responsible for German naval cryptanalysis. Here, he devised a
-        number of techniques for speeding the breaking of German ciphers, including improvements to the
-        pre-war Polish bombe method and an electromechanical machine that could find settings for the
-        Enigma machine.
-        
-        The first electronic digital computer was developed in the period from 1937 to 1942 at Iowa
-        State College by John Atanasoff. The Atanasoff Berry Computer used vacuum tubes and binary
-        arithmetic. In 1945, John von Neumann wrote First Draft of a Report on the EDVAC which described
-        a stored-program computer design where data and programs were stored together. This design became
-        known as the von Neumann architecture and formed the basis for most modern computers.
-        
-        Programming languages have evolved dramatically over the decades. The first high-level programming
-        language was Plankalkül, designed by Konrad Zuse in the 1940s but not published until 1972. The
-        first widely used high-level language was Fortran, developed by a team at IBM led by John Backus,
-        and released in 1957. Since then, thousands of programming languages have been created, including
-        C, Python, Java, and JavaScript, each designed to solve different types of problems or to make
-        programming more accessible to different groups of people.
-        """;
+     String text = 
+        "The history of computer science began long before the modern discipline of computer science, " +
+        "usually appearing in forms like mathematics or physics. Developments in previous centuries " +
+        "alluded to the discipline that we now know as computer science. This progression, from " +
+        "mechanical inventions and mathematical theories towards modern computer concepts and machines, " +
+        "led to the development of a major academic field and the basis of a massive worldwide industry. " +
+        "\n\n" +
+        "The earliest known tool for use in computation was the abacus, developed in the period between " +
+        "2700 and 2300 BCE in Sumer. The Sumerians' abacus consisted of a table of successive columns " +
+        "which delimited the successive orders of magnitude of their sexagesimal number system. Its " +
+        "original style of usage was by lines drawn in sand with pebbles. Abaci of a more modern design " +
+        "are still used as calculation tools today. " +
+        "\n\n" +
+        "In 1837, Charles Babbage first described his Analytical Engine which is accepted as the first " +
+        "design for a modern computer. The analytical engine had expandable memory, an arithmetic unit, " +
+        "and logic processing capabilities able to interpret a programming language with loops and " +
+        "conditional branching. Although never built, the design has been studied extensively and is " +
+        "understood to be Turing complete. The analytical engine would have been a digital computer. " +
+        "\n\n" +
+        "Alan Turing is widely considered to be the father of theoretical computer science and artificial " +
+        "intelligence. During World War II, Turing worked for the Government Code and Cypher School at " +
+        "Bletchley Park, Britain's codebreaking centre that produced Ultra intelligence. For a time he " +
+        "led Hut 8, the section that was responsible for German naval cryptanalysis. Here, he devised a " +
+        "number of techniques for speeding the breaking of German ciphers, including improvements to the " +
+        "pre-war Polish bombe method and an electromechanical machine that could find settings for the " +
+        "Enigma machine. " +
+        "\n\n" +
+        "The first electronic digital computer was developed in the period from 1937 to 1942 at Iowa " +
+        "State College by John Atanasoff. The Atanasoff Berry Computer used vacuum tubes and binary " +
+        "arithmetic. In 1945, John von Neumann wrote First Draft of a Report on the EDVAC which described " +
+        "a stored-program computer design where data and programs were stored together. This design became " +
+        "known as the von Neumann architecture and formed the basis for most modern computers. " +
+        "\n\n" +
+        "Programming languages have evolved dramatically over the decades. The first high-level programming " +
+        "language was Plankalkül, designed by Konrad Zuse in the 1940s but not published until 1972. The " +
+        "first widely used high-level language was Fortran, developed by a team at IBM led by John Backus, " +
+        "and released in 1957. Since then, thousands of programming languages have been created, including " +
+        "C, Python, Java, and JavaScript, each designed to solve different types of problems or to make " +
+        "programming more accessible to different groups of people.";
         
         HuffmanCoding huffman = new HuffmanCoding();
         String encoded = huffman.encode(text);

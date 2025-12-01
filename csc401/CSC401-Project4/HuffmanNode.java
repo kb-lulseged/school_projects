@@ -15,7 +15,7 @@ public class HuffmanNode implements Comparable<HuffmanNode> {
 
     // Consturctor for internal node
     public HuffmanNode(int frequency) {
-        this.character = '\O';
+        this.character = '\0';
         this.frequency = frequency;
         this.left = null;
         this.right = null;
