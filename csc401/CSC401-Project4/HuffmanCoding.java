@@ -224,3 +224,29 @@ public class HuffmanCoding {
 }
 
 
+class CompressionStats {
+    int originalSize;
+    int originalBits;
+    int encodedBits;
+    double compressionRatio;
+    int spaceSaved;
+
+    public CompressionStats(int originalSize, int originalBits, int encodedBits, double compressionRatio, int spaceSaved) {
+        this.originalSize = originalSize;
+        this.originalBits = originalBits;
+        this.encodedBits = encodedBits;
+        this.compressionRatio = compressionRatio;
+        this.spaceSaved = spaceSaved;
+    }
+
+    @Override
+    public String toString() {
+        return String.format(
+                "Original size: %d bits%n" + 
+                "Encoded size: %d bits%n" + 
+                "Compression ratio: %.2f%%%n" +
+                "Space saved: %d bits", 
+                originalBits, encodedBits, compressionRatio, spaceSaved
+                );
+    }
+}
