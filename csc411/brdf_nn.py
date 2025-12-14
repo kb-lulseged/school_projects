@@ -90,11 +90,13 @@ class NeuralNetwork:
         
         # output layer gradients
         dz2 = (2/n) * (y_pred - y_true)
-        dW2 = self.a1.T & dz2 
+        dW2 = self.a1.T @ dz2 
         db2 = np.sum(dz2, axis=0, keepdims=True)
 
         # hidden layer gradients 
         da1 = dz2 @ self.W2.T 
+        dz1 = da1 * relu_derivative(self.z1)
+
         dW1 = X.T @ dz1 
         db1 = np.sum(dz1, axis=0, keepdims=True)
 
@@ -163,7 +165,7 @@ def train(model, X_train, y_train, X_test, y_test, epochs=100, batch_size=32):
             patience_counter += 1 
 
         if (epoch + 1) % 10 == 0:
-            printf(f"Epoc {epoch+1}/{epochs} | Train loss: {train_loss:.6f} | Test Loss: {test_loss:.6f}")
+            print(f"Epoc {epoch+1}/{epochs} | Train loss: {train_loss:.6f} | Test Loss: {test_loss:.6f}")
 
         if patience_counter >= patience:
             print(f"\nEarly stopping at epoch {epoch + 1}, no improvement for {patience} epochs")
